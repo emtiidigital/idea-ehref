@@ -1,0 +1,3 @@
+
+// initizialize materialize
+require('./materialize');
