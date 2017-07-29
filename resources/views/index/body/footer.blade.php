@@ -5,11 +5,16 @@
         <div class="section"></div>
 
         <blockquote>
-            <a class="black-text" href="">Guidelines</a> |
-            <a class="black-text" href="">FAQ</a> |
-            <a class="black-text" href="">Impressum</a>
+            <a class="black-text" href="">
+                @lang('Guidelines')
+            </a> |
+            <a class="black-text" href="">
+                @lang('FAQ')
+            </a> |
+            <a class="black-text" href="">
+                @lang('Imprint')
+            </a>
         </blockquote>
-
     </div>
 
     @include('index.body.footer.js')

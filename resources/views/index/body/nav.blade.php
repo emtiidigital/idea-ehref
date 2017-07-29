@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row section white valign-wrapper">
             <div class="col s1">
-                <img class="brand-logo" src="{{ asset('img/ehref.svg') }}">
+                <a class="black-text" href="{{ route('home') }}">
+                    <img class="brand-logo" src="{{ asset('img/ehref.svg') }}">
+                </a>
             </div>
             <div class="col s11">
                 <a class="black-text" href="{{ route('home') }}">

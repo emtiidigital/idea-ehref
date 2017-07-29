@@ -1,0 +1,18 @@
+{
+  "These credentials do not match our records.": "Diese Zugangsdaten konnten keinem Benutzer zugeordnet werden.",
+  "Too many login attempts. Please try again in :seconds seconds.": "Zu viele Login-Versuche. Bitte probieren Sie es in :seconds Sekunden erneut.",
+  "&laquo; Previous": "&laquo; Zurück",
+  "Next &raquo;": "Nächste &raquo;",
+  "Passwords must be at least six characters and match the confirmation.": "Passwörter müssen mindestens 6 Zeichen haben.",
+  "Your password has been reset!": "Ihr Passwort wurde zurückgesetzt.",
+  "We have e-mailed your password reset link!": "Wir haben Ihnen einen Link per eMail zugesandt, in welchem Sie Ihr Passwort zurücksetzen können.",
+  "This password reset token is invalid.": "Das Passwort konnte nicht zurückgesetzt werden. Das Token ist nicht gültig.",
+  "We can't find a user with that e-mail address.": "Leider konnten wir keinen Benutzer mit dieser eMail-Adresse finden.",
+  "ECOMMERCE HYPER REFERENCE": "ECOMMERCE HYPER REFERENCE",
+  "Guideline|Guidelines": "Guideline|Guidelines",
+  "FAQ": "FAQ",
+  "Imprint": "Impressum",
+  "Vote|Votes": "Bewertung|Bewertungen",
+  "Comment|Comments": "Kommentar|Kommentare",
+  "New": "Neu"
+}
