@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home/index');
-})->name('home');
+
+Route::get('/', [
+    'uses' => 'HomeController@indexAction',
+    'as' => 'home'
+]);
+
+Route::get('/detail/{id}', [
+    'uses' => 'DetailController@indexAction',
+    'as' => 'detail'
+]);

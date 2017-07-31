@@ -6,10 +6,10 @@
 {{--
             <div class="row">
                 <div class="col s6">
-                    @include('home.filter')
+                    @include('home.include.filter')
                 </div>
                 <div class="col s6">
-                    @include('home.sort')
+                    @include('home.include.sort')
                 </div>
             </div>
 
@@ -18,14 +18,16 @@
             {{-- Link List --}}
             <div class="row">
                 <div class="col s12">
-                    @include('home.links')
+                    <div class="collection">
+                        @each('home.include.link', $links, 'link', 'home.include.link_empty')
+                    </div>
                 </div>
             </div>
 
             {{-- Pagination --}}
             <div class="row">
                 <div class="right">
-                    @include('home.pagination')
+                    @include('home.include.pagination')
                 </div>
             </div>
 
