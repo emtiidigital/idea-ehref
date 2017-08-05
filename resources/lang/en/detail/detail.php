@@ -4,15 +4,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Footer Language Lines
+    | Detail Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used in the footer.
+    | The following language lines are used in the detail page.
     |
     */
 
-    'guidelines' => 'Guidelines|Guidelines',
-    'faq' => 'FAQ',
-    'imprint' => 'Imprint'
+    'new_comment' => 'New Comment'
+    'save_comment' => 'Save Comment'
 
 ];

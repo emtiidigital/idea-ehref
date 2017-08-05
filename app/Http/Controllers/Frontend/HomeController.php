@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
     public function indexAction()
     {
-        $links = $this->getLinksForHomepage();
+        $url = action('DetailController@indexAction', ['id' => 1]);
+        $linkdata = $this->getLinksForHomepage();
 
-        return view('home.index', ['links' => $links]);
+        return view('home.index', ['linkdata' => $linkdata]);
     }
 
     private function getLinksForHomepage(): array
@@ -18,6 +19,7 @@ class HomeController extends Controller
         $linksMock = [
             '1' => [
                 'id' => 1,
+                'detail_url' => 'detail/1',
                 'language' => 'de_DE',
                 'name' => 'Arbeitgeber dürfen nicht kündigen.',
                 'label' => 'IT',
@@ -35,7 +37,8 @@ class HomeController extends Controller
                 'lastupdated_on' => '2017-07-31T19:10:52+00:00'
             ],
             '2' => [
-                'id' => 1,
+                'id' => 2,
+                'detail_url' => 'detail/2',
                 'language' => 'de_DE',
                 'name' => 'Rofl Coptor',
                 'label' => 'Markting',

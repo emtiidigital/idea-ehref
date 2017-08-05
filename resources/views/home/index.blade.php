@@ -19,18 +19,19 @@
             <div class="row">
                 <div class="col s12">
                     <div class="collection">
-                        @each('home.include.link', $links, 'link', 'home.include.link_empty')
+                        @each('includes.link', $linkdata, 'linkdata', 'home.include.link_empty')
                     </div>
                 </div>
             </div>
 
             {{-- Pagination --}}
+            {{--
             <div class="row">
                 <div class="right">
                     @include('home.include.pagination')
                 </div>
             </div>
-
+            --}}
         </div>
     </div>
 @endsection

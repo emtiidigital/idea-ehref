@@ -4,6 +4,7 @@
         <div class="divider"></div>
         <div class="section"></div>
 
+        {{--
         <blockquote>
             <a class="black-text" href="">
                 @lang('Guidelines')
@@ -15,6 +16,7 @@
                 @lang('Imprint')
             </a>
         </blockquote>
+        --}}
     </div>
 
     @include('index.body.footer.js')

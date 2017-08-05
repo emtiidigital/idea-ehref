@@ -13,11 +13,11 @@
 
 
 Route::get('/', [
-    'uses' => 'HomeController@indexAction',
+    'uses' => 'Frontend\HomeController@indexAction',
     'as' => 'home'
 ]);
 
 Route::get('/detail/{id}', [
-    'uses' => 'DetailController@indexAction',
+    'uses' => 'Frontend\DetailController@indexAction',
     'as' => 'detail'
 ]);

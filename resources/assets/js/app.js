@@ -1,3 +1,2 @@
-
 // initizialize materialize
 require('./materialize');

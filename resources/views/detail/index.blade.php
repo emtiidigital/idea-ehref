@@ -3,19 +3,32 @@
 @section('frontend_index_body_content_inner')
     <div class="container">
         <div class="section">
-            <div class="collection">
-                <a href="#!" class="collection-item">
 
-                    <span class="grey-text">
-                        Arbeitgeber dürfen Mitarbeiter nicht ...
-                    </span>
-                    <span class="">(golem.de)</span>
-                    <span class="new badge grey" data-badge-caption="Kommentare ">0</span>
-                    <span class="new badge grey darken-1" data-badge-caption="IT"></span>
-                    <span class="new badge red lighten-1" data-badge-caption="Votes">20</span>
-                    <span class="grey-text">by cirrus-clouds 38 minutes ago</span>
-                </a>
+            {{-- Link --}}
+            <div class="row">
+                <div class="col s12">
+                    <div class="collection">
+                        @include('includes.link', $linkdata)
+                    </div>
+                </div>
+            </div>
+
+            {{-- Add new comments --}}
+            <div class="row">
+                <form class="col s12">
+                    <div class="col s8">
+                        @include('detail.include.new_comment')
+                    </div>
+                    <div class="col s4">
+                        <a class="waves-effect waves-light btn">@lang('Save Comment')</a>
+                    </div>
+                </form>
+            </div>
+
+            {{-- Show all available comments --}}
+            <div class="row">
+                @include('detail.include.all_comments')
             </div>
         </div>
     </div>
-@show
+@endsection
