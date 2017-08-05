@@ -16,8 +16,3 @@ Route::get('/', [
     'uses' => 'Frontend\HomeController@indexAction',
     'as' => 'home'
 ]);
-
-Route::get('/detail/{id}', [
-    'uses' => 'Frontend\DetailController@indexAction',
-    'as' => 'detail'
-]);

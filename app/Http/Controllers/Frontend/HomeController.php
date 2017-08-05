@@ -8,7 +8,6 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        $url = action('DetailController@indexAction', ['id' => 1]);
         $linkdata = $this->getLinksForHomepage();
 
         return view('home.index', ['linkdata' => $linkdata]);
