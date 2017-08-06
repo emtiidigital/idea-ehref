@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'new_comment' => 'New Comment'
+    'new_comment' => 'New Comment',
     'save_comment' => 'Save Comment'
 
 ];

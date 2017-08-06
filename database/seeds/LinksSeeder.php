@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 class LinksSeeder extends Seeder
 {
     const MAX_TO_CREATE = 1000;
+
     /**
      * Run the database seeds with foreign key relations.
      *
@@ -12,13 +13,13 @@ class LinksSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\LinksModel::class, self::MAX_TO_CREATE)
+        factory(App\Entities\Link::class, self::MAX_TO_CREATE)
             ->create()
             ->each(
                 function ($link) {
-                    factory(App\Models\LinksDetailsModel::class)->create(['link_id' => $link->id]);
-                    factory(App\Models\LinksDetailsFqdnModel::class)->create(['link_id' => $link->id]);
-                    factory(App\Models\LinksLabelsModel::class)->create(['link_id' => $link->id]);
+                    factory(App\Entities\LinkDetails::class)->create([ 'link_id' => $link->id]);
+                    factory(App\Entities\LinkFqdn::class)->create([ 'link_id' => $link->id]);
+                    factory(App\Entities\LinkLabel::class)->create([ 'link_id' => $link->id]);
                 }
             );
     }

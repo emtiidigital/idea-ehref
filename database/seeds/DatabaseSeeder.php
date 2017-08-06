@@ -6,9 +6,9 @@ class DatabaseSeeder extends Seeder
 {
     const TABLES_TO_TRUNCATE = [
         'emtii_links',
-        'emtii_links_details',
-        'emtii_links_details_fqdn',
-        'emtii_links_labels',
+        'emtii_link_details',
+        'emtii_link_fqdn',
+        'emtii_link_label',
         'emtii_labels'
     ];
 

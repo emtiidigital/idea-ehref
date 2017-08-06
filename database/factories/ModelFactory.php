@@ -16,7 +16,7 @@
  *
  * @var \Illuminate\Database\Eloquent\Factory $factory
  */
-$factory->define(App\Models\LinksModel::class, function () {
+$factory->define(App\Entities\Link::class, function () {
     return [];
 });
 
@@ -25,7 +25,7 @@ $factory->define(App\Models\LinksModel::class, function () {
  *
  * @var \Illuminate\Database\Eloquent\Factory $factory
  */
-$factory->define(\App\Models\LinksDetailsModel::class, function (Faker\Generator $faker) {
+$factory->define(\App\Entities\LinkDetails::class, function (Faker\Generator $faker) {
     return [
         //'link_id' => $faker->numberBetween(1, 1000),
         'name' => $faker->name,
@@ -38,7 +38,7 @@ $factory->define(\App\Models\LinksDetailsModel::class, function (Faker\Generator
  *
  * @var \Illuminate\Database\Eloquent\Factory $factory
  */
-$factory->define(\App\Models\LinksDetailsFqdnModel::class, function (Faker\Generator $faker) {
+$factory->define(\App\Entities\LinkFqdn::class, function (Faker\Generator $faker) {
     return [
         //'link_id' => $faker->numberBetween(1, 1000),
         'protocol' => $faker->randomElement(['http', 'https']),
@@ -55,7 +55,7 @@ $factory->define(\App\Models\LinksDetailsFqdnModel::class, function (Faker\Gener
  *
  * @var \Illuminate\Database\Eloquent\Factory $factory
  */
-$factory->define(\App\Models\LinksLabelsModel::class, function (Faker\Generator $faker) {
+$factory->define(\App\Entities\LinkLabel::class, function (Faker\Generator $faker) {
     return [
         //'link_id' => $faker->numberBetween(1, 1000),
         'label_id' => $faker->numberBetween(1, 10)
@@ -67,7 +67,7 @@ $factory->define(\App\Models\LinksLabelsModel::class, function (Faker\Generator 
  *
  * @var \Illuminate\Database\Eloquent\Factory $factory
  */
-$factory->define(\App\Models\LabelsModel::class, function (Faker\Generator $faker) {
+$factory->define(\App\Entities\Label::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->colorName
     ];

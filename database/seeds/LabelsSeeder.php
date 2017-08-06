@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 class LabelsSeeder extends Seeder
 {
     const MAX_TO_CREATE = 100;
+
     /**
      * Run the database seeds.
      *
@@ -12,6 +13,6 @@ class LabelsSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\LabelsModel::class, self::MAX_TO_CREATE)->create();
+        factory(App\Entities\Label::class, self::MAX_TO_CREATE)->create();
     }
 }
