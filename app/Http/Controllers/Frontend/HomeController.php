@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function indexAction()
     {
-        $allLinks = $this->linkRepository->getAllLinks();
+        $allLinks = $this->linkRepository->getPaginatedLinks();
 
         return view('home.index', ['links' => $allLinks]);
     }

@@ -11,14 +11,23 @@ use App\Entities\Link;
  */
 class LinkRepository implements LinkInterface
 {
+    const LINK_JOIN_TABLES = [
+            'details',
+            'fqdn',
+            'label'
+        ];
+
     public function getAllLinks()
     {
         return Link::with(
-            [
-                'details',
-                'fqdn',
-                'label'
-            ]
+            self::LINK_JOIN_TABLES
         )->get();
+    }
+
+    public function getPaginatedLinks()
+    {
+        return Link::with(
+            self::LINK_JOIN_TABLES
+        )->simplePaginate(30);
     }
 }

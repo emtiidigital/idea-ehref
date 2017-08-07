@@ -25,13 +25,11 @@
             </div>
 
             {{-- Pagination --}}
-            {{--
             <div class="row">
                 <div class="right">
                     @include('home.include.pagination')
                 </div>
             </div>
-            --}}
         </div>
     </div>
 @endsection
