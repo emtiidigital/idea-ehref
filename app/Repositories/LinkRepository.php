@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Entities\Link;
+use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class LinkRepository
@@ -17,17 +19,25 @@ class LinkRepository implements LinkInterface
             'label'
         ];
 
-    public function getAllLinks()
+    const LINKS_PER_PAGE = 30;
+
+    /**
+     * @inheritdoc
+     */
+    public function getAllLinks(): Collection
     {
         return Link::with(
             self::LINK_JOIN_TABLES
         )->get();
     }
 
-    public function getPaginatedLinks()
+    /**
+     * @inheritdoc
+     */
+    public function getPaginatedLinks(): Paginator
     {
         return Link::with(
             self::LINK_JOIN_TABLES
-        )->simplePaginate(30);
+        )->simplePaginate(self::LINKS_PER_PAGE, ['*'], 'p');
     }
 }

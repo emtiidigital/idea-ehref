@@ -16,3 +16,8 @@ Route::get('/', [
     'uses' => 'Frontend\HomeController@indexAction',
     'as' => 'home'
 ]);
+
+Route::get('/imprint', [
+    'uses' => 'Frontend\PageController@imprintAction',
+    'as' => 'imprint'
+]);
