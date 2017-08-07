@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col s12">
                     <div class="collection">
-                        @each('includes.link', $linkdata, 'linkdata', 'home.include.link_empty')
+                        @each('includes.link', $links, 'link', 'home.include.link_empty')
                     </div>
                 </div>
             </div>

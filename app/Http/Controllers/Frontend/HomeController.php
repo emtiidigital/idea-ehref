@@ -7,11 +7,18 @@ use App\Repositories\LinkRepository;
 
 class HomeController extends Controller
 {
+    protected $linkRepository;
+
+    public function __construct(
+        LinkRepository $linkRepository
+    ) {
+        $this->linkRepository = $linkRepository;
+    }
+
     public function indexAction()
     {
-        $lr = new LinkRepository();
-        $links = $lr->getAllLinks();
+        $allLinks = $this->linkRepository->getAllLinks();
 
-        return view('home.index', ['linkdata' => $links]);
+        return view('home.index', ['links' => $allLinks]);
     }
 }

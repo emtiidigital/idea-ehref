@@ -1,13 +1,13 @@
 {{-- link --}}
-<a href="{{ $linkdata['url']['full'] }}" class="collection-item">
+<a href="{{ $link->fqdn->full_qualified_link }}" class="collection-item">
     {{-- link name --}}
     <span class="grey-text">
-        {{ $linkdata['name'] }}
+        {{ $link->details->name }}
     </span>
 
     {{-- link domain --}}
     <span>
-        ({{ $linkdata['url']['domainname'] }})
+        ({{ $link->fqdn->second_level_label }})
     </span>
 
     {{-- detail link to comments --}}
@@ -27,6 +27,6 @@
     --}}
 
     {{-- badge label --}}
-    <span class="new badge red darken-1" data-badge-caption="{{ $linkdata['label'] }}">
+    <span class="new badge red darken-1" data-badge-caption="{{ $link->label->label_id }}">
     </span>
 </a>
