@@ -81,7 +81,5 @@
                 Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br><br>
             </p>
         </div>
-
-    </div>
     </div>
 @endsection

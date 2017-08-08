@@ -9,7 +9,8 @@ class DatabaseSeeder extends Seeder
         'emtii_link_details',
         'emtii_link_fqdn',
         'emtii_link_label',
-        'emtii_labels'
+        'emtii_labels',
+        'emtii_newsfeeds'
     ];
 
     /**
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(LabelsSeeder::class);
         $this->call(LinksSeeder::class);
+        $this->call(NewsFeedSeeder::class);
     }
 
     /**

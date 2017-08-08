@@ -27,6 +27,7 @@
     --}}
 
     {{-- badge label --}}
-    <span class="new badge red darken-1" data-badge-caption="{{ $link->label->label_id }}">
-    </span>
+    {{--
+    <span class="new badge red darken-1" data-badge-caption="{{ $link->label->label_id }}"></span>
+    --}}
 </a>

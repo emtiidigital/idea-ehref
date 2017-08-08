@@ -14,7 +14,7 @@ class Label extends Model
     protected $table = 'emtii_labels';
 
     /**
-     * Indicates if the model should be timestamped.
+     * Indicates if the model is timestamped.
      *
      * @var bool
      */

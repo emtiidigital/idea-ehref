@@ -15,8 +15,7 @@ class LinkRepository implements LinkInterface
 {
     const LINK_JOIN_TABLES = [
             'details',
-            'fqdn',
-            'label'
+            'fqdn'
         ];
 
     const LINKS_PER_PAGE = 30;

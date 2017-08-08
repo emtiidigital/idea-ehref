@@ -72,3 +72,17 @@ $factory->define(\App\Entities\Label::class, function (Faker\Generator $faker) {
         'name' => $faker->colorName
     ];
 });
+
+
+/**
+ * NewsFeed Model
+ */
+$factory->define(\App\Entities\NewsFeed::class, function (\Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'website' => $faker->domainName,
+        'locale' => $faker->locale,
+        'deeplink' => $faker->url,
+        'feedformat' => $faker->fileExtension
+    ];
+});
