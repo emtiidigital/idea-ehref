@@ -83,6 +83,8 @@ $factory->define(\App\Entities\NewsFeed::class, function (\Faker\Generator $fake
         'website' => $faker->domainName,
         'locale' => $faker->locale,
         'deeplink' => $faker->url,
-        'feedformat' => $faker->fileExtension
+        'local_file' => 'local_filename.' . $faker->fileExtension,
+        'local_file_name' => $faker->name,
+        'local_file_format' => $faker->fileExtension
     ];
 });

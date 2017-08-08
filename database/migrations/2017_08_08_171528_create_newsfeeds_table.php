@@ -20,7 +20,9 @@ class CreateNewsfeedsTable extends Migration
             $table->string('name');
             $table->string('locale');
             $table->string('deeplink');
-            $table->string('feedformat');
+            $table->string('local_file');
+            $table->string('local_file_name');
+            $table->string('local_file_format');
             $table->timestamps();
         });
     }
