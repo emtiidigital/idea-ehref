@@ -6,7 +6,6 @@ use App\Events\ProcessNewsFeedsEvent;
 
 /**
  * Class ProcessKassenzoneRssFeed
- *
  * @feed Artikel https://www.kassenzone.de/feed/
  * @feed Podcasts http://feeds.soundcloud.com/users/soundcloud:users:51907160/sounds.rss
  * @package App\Listeners
@@ -27,5 +26,10 @@ class ProcessKassenzoneRssFeed
      */
     public function handle(ProcessNewsFeedsEvent $event)
     {
+        $event->newsfeed->getAttributes();
+
+        $this->loadFileFromStorage();
+        $this->processFile();
+        $this->saveNewLinks();
     }
 }

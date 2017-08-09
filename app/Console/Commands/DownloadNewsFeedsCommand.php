@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Entities\NewsFeed;
+use App\Events\DownloadNewsFeedsEvent;
 use Illuminate\Console\Command;
+use League\Flysystem\File;
 
 class DownloadNewsFeedsCommand extends Command
 {
@@ -27,6 +30,24 @@ class DownloadNewsFeedsCommand extends Command
      */
     public function handle()
     {
-        //
+        $newsfeeds = NewsFeed::all();
+
+        $feedCount = $newsfeeds->count();
+
+        if ($feedCount > 0) {
+            $bar = $this->output->createProgressBar($feedCount);
+
+            $bar->clear();
+            $this->info("Start downloading {$feedCount} feeds.");
+
+            foreach ($newsfeeds as $newsfeed) {
+                event(new DownloadNewsFeedsEvent($newsfeed));
+                $bar->advance();
+            }
+
+            $bar->finish();
+        }
+
+        return true;
     }
 }

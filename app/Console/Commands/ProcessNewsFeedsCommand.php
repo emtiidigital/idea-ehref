@@ -32,19 +32,20 @@ class ProcessNewsFeedsCommand extends Command
     {
         $newsfeeds = NewsFeed::all();
 
-        $newsfeedsCount = $newsfeeds->count();
+        $feedCount = $newsfeeds->count();
 
-        if ($newsfeedsCount > 0) {
-            $this->info("Start processing {$newsfeedsCount} Newsfeeds.");
+        if ($feedCount > 0) {
+            $this->info("Start processing {$feedCount} Newsfeeds.");
 
-            $bar = $this->output->createProgressBar($newsfeedsCount);
+            $bar = $this->output->createProgressBar($feedCount);
 
             foreach ($newsfeeds as $newsfeed) {
                 $this->info("Process {$newsfeed->name}");
                 event(new ProcessNewsFeedsEvent($newsfeed));
-
                 $bar->advance();
             }
+
+            $this->info("Processed {$feedCount} Newsfeeds.");
 
             $bar->finish();
         }
