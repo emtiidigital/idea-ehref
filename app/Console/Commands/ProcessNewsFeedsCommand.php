@@ -6,6 +6,10 @@ use App\Entities\NewsFeed;
 use App\Events\ProcessNewsFeedsEvent;
 use Illuminate\Console\Command;
 
+/**
+ * Class ProcessNewsFeedsCommand
+ * @package App\Console\Commands
+ */
 class ProcessNewsFeedsCommand extends Command
 {
     /**
@@ -40,12 +44,9 @@ class ProcessNewsFeedsCommand extends Command
             $bar = $this->output->createProgressBar($feedCount);
 
             foreach ($newsfeeds as $newsfeed) {
-                $this->info("Process {$newsfeed->name}");
                 event(new ProcessNewsFeedsEvent($newsfeed));
                 $bar->advance();
             }
-
-            $this->info("Processed {$feedCount} Newsfeeds.");
 
             $bar->finish();
         }

@@ -5,8 +5,11 @@ namespace App\Console\Commands;
 use App\Entities\NewsFeed;
 use App\Events\DownloadNewsFeedsEvent;
 use Illuminate\Console\Command;
-use League\Flysystem\File;
 
+/**
+ * Class DownloadNewsFeedsCommand
+ * @package App\Console\Commands
+ */
 class DownloadNewsFeedsCommand extends Command
 {
     /**
