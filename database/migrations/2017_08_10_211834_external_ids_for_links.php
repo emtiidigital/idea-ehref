@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterLinksAddPublishedTimestamp extends Migration
+class ExternalIdsForLinks extends Migration
 {
-    const TABLE_NAME = 'emtii_links';
+    const TABLE_NAME = 'emtii_link_details';
 
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ class AlterLinksAddPublishedTimestamp extends Migration
     public function up()
     {
         Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->timestamp('published_at')->useCurrent();
+            $table->string('external_link_id');
         });
     }
 
@@ -28,7 +28,7 @@ class AlterLinksAddPublishedTimestamp extends Migration
     public function down()
     {
         Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->dropColumn('published_at');
+            $table->dropColumn('external_link_id');
         });
     }
 }

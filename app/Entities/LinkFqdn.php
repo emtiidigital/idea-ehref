@@ -14,6 +14,13 @@ class LinkFqdn extends Model
     protected $table = 'emtii_link_fqdn';
 
     /**
+     * The attributes that are allowed for mass assignment.
+     *
+     * @var array
+     */
+    protected $fillable = ['scheme', 'host', 'deeplink', 'full_qualified_link'];
+
+    /**
      * Indicates if the model should be timestamped.
      *
      * @var bool

@@ -14,6 +14,13 @@ class LinkDetails extends Model
     protected $table = 'emtii_link_details';
 
     /**
+     * The attributes that are allowed for mass assignment.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'locale', 'external_link_id'];
+
+    /**
      * Indicates if the model should be timestamped.
      *
      * @var bool

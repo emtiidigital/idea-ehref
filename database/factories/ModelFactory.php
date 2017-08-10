@@ -29,7 +29,8 @@ $factory->define(\App\Entities\LinkDetails::class, function (Faker\Generator $fa
     return [
         //'link_id' => $faker->numberBetween(1, 1000),
         'name' => $faker->name,
-        'locale' => $faker->locale
+        'locale' => $faker->locale,
+        'external_link_id' => $faker->uuid
     ];
 });
 
@@ -41,10 +42,8 @@ $factory->define(\App\Entities\LinkDetails::class, function (Faker\Generator $fa
 $factory->define(\App\Entities\LinkFqdn::class, function (Faker\Generator $faker) {
     return [
         //'link_id' => $faker->numberBetween(1, 1000),
-        'protocol' => $faker->randomElement(['http', 'https']),
-        'third_level_label' => $faker->randomElement(['www', '']),
-        'second_level_label' => $faker->domainName,
-        'top_level_domain' => $faker->tld,
+        'scheme' => $faker->randomElement(['http', 'https']),
+        'host' => $faker->domainName,
         'deeplink' => 'emtii-digital',
         'full_qualified_link' => $faker->url
     ];

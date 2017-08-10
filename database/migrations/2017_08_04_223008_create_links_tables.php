@@ -28,10 +28,8 @@ class CreateLinksTables extends Migration
         Schema::create('emtii_link_fqdn', function (Blueprint $table) {
             $table->increments('id'); // 1
             $table->integer('link_id'); // 1
-            $table->string('protocol'); // https
-            $table->string('third_level_label'); // www
-            $table->string('second_level_label'); // foobar
-            $table->string('top_level_domain'); // de
+            $table->string('scheme'); // https
+            $table->string('host'); // www
             $table->string('deeplink'); // /emtii
             $table->string('full_qualified_link'); // https://www.foobar.de/emtii
         });

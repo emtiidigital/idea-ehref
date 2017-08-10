@@ -14,6 +14,24 @@ class Link extends Model
     protected $table = 'emtii_links';
 
     /**
+     * The attributes that are allowed for mass assignment.
+     *
+     * @var array
+     */
+    protected $fillable = ['published_at'];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'published_at'
+    ];
+
+    /**
      * Return details associated with this model.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

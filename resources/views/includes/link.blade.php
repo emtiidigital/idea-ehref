@@ -2,12 +2,12 @@
 <a href="{{ $link->fqdn->full_qualified_link }}" class="collection-item">
     {{-- link name --}}
     <span class="grey-text">
-        {{ $link->details->name }}
+        {{ str_limit($link->details->name, 50) }}
     </span>
 
     {{-- link domain --}}
     <span>
-        ({{ $link->fqdn->second_level_label }})
+        ({{ $link->fqdn->host }})
     </span>
 
     {{-- detail link to comments --}}
