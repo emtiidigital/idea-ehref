@@ -3,18 +3,17 @@
 namespace App\Listeners;
 
 use App\Events\ProcessNewsFeedsEvent;
-use App\Listeners\Kassenzone\KassenzoneArtikelMapper;
+use App\Listeners\Kassenzone\ExcitingCommerceArtikelMapper;
 use App\Repositories\LinkRepository;
 use Illuminate\Support\Facades\Storage;
 use SimpleXMLElement;
 
 /**
- * Class ProcessKassenzoneRssFeed
+ * Class ProcessKassenzoneArtikelRssFeed
  * @feed Artikel https://www.kassenzone.de/feed/
- * @feed Podcasts http://feeds.soundcloud.com/users/soundcloud:users:51907160/sounds.rss
  * @package App\Listeners
  */
-class ProcessKassenzoneRssFeed
+class ProcessKassenzoneArtikelRssFeed
 {
     /**
      * We need this prefix to make sure
@@ -108,20 +107,21 @@ class ProcessKassenzoneRssFeed
      * Get Mapper for explicit "Artikel RSS Feed" of Kassenzone.
      *
      * @param $item
-     * @return KassenzoneArtikelMapper
+     *
+     * @return ExcitingCommerceArtikelMapper
      */
-    private function getKassenzoneArtikelMapper($item): KassenzoneArtikelMapper
+    private function getKassenzoneArtikelMapper($item ): ExcitingCommerceArtikelMapper
     {
-        return new KassenzoneArtikelMapper($item);
+        return new ExcitingCommerceArtikelMapper($item);
     }
 
     /**
      * Save new Links to Database by calling
      * save method in Link Repositor.
      *
-     * @param KassenzoneArtikelMapper $mapper
+     * @param ExcitingCommerceArtikelMapper $mapper
      */
-    private function saveNewLinks(KassenzoneArtikelMapper $mapper): void
+    private function saveNewLinks( ExcitingCommerceArtikelMapper $mapper): void
     {
         $this->linkRepository->saveNewLink(
             $mapper->getMappedLink(),

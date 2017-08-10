@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use App\Events\DownloadNewsFeedsEvent;
 use App\Events\ProcessNewsFeedsEvent;
-use App\Listeners\ProcessKassenzoneRssFeed;
+use App\Listeners\ProcessExcitingCommerceArtikelRssFeed;
+use App\Listeners\ProcessKassenzonePodcastRssFeed;
 use App\Listeners\SaveNewsFeedToStorage;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -20,7 +21,9 @@ class EventServiceProvider extends ServiceProvider
             SaveNewsFeedToStorage::class
         ],
         ProcessNewsFeedsEvent::class => [
-            ProcessKassenzoneRssFeed::class
+            // www.kassenzone.de
+            ProcessExcitingCommerceArtikelRssFeed::class,
+            ProcessKassenzonePodcastRssFeed::class
             // @TODO: Alle listener auf Prozess registrieren
         ]
     ];
