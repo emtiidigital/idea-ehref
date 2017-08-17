@@ -3,16 +3,10 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LinkDetails extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'emtii_link_details';
-
     /**
      * The attributes that are allowed for mass assignment.
      *
@@ -28,12 +22,12 @@ class LinkDetails extends Model
     public $timestamps = false;
 
     /**
-     * Associate reverse relationship with model.
+     * A link detail belong to one link.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function link()
+    public function link(): BelongsTo
     {
-        return $this->belongsTo('App\Entities\Link');
+        return $this->belongsTo(Link::class);
     }
 }

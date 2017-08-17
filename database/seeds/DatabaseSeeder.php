@@ -5,12 +5,12 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     const TABLES_TO_TRUNCATE = [
-        'emtii_links',
-        'emtii_link_details',
-        'emtii_link_fqdn',
-        'emtii_link_label',
-        'emtii_labels',
-        'emtii_newsfeeds'
+        'links',
+        'link_details',
+        'link_fqdn',
+        'link_label',
+        'labels',
+        'newsfeeds'
     ];
 
     /**

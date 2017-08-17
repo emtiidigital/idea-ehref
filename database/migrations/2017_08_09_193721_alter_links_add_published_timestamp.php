@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class AlterLinksAddPublishedTimestamp extends Migration
 {
-    const TABLE_NAME = 'emtii_links';
+    const TABLE_NAME = 'links';
 
     /**
      * Run the migrations.
@@ -27,8 +27,6 @@ class AlterLinksAddPublishedTimestamp extends Migration
      */
     public function down()
     {
-        Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->dropColumn('published_at');
-        });
+      
     }
 }

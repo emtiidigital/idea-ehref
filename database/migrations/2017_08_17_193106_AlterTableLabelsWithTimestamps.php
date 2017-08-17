@@ -4,10 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ExternalIdsForLinks extends Migration
+class AlterTableLabelsWithTimestamps extends Migration
 {
-    const TABLE_NAME = 'link_details';
-
+    const TABLE_NAME = 'labels';
     /**
      * Run the migrations.
      *
@@ -16,7 +15,7 @@ class ExternalIdsForLinks extends Migration
     public function up()
     {
         Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->string('external_link_id');
+            $table->timestamps();
         });
     }
 
@@ -28,7 +27,7 @@ class ExternalIdsForLinks extends Migration
     public function down()
     {
         Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->dropColumn('external_link_id');
+            $table->dropTimestamps();
         });
     }
 }

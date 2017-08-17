@@ -3,16 +3,10 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Label extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'emtii_labels';
-
     /**
      * Indicates if the model is timestamped.
      *
@@ -21,14 +15,12 @@ class Label extends Model
     public $timestamps = false;
 
     /**
-     * Return link label data associated with this model.
+     * Many label can belong to one link.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return BelongsToMany
      */
-    public function link()
+    public function links(): BelongsToMany
     {
-        return $this->hasOne(
-            'App\Entities\LinkLabel'
-        );
+        return $this->belongsToMany(Link::class);
     }
 }

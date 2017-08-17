@@ -3,16 +3,11 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Link extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'emtii_links';
-
     /**
      * The attributes that are allowed for mass assignment.
      *
@@ -32,33 +27,36 @@ class Link extends Model
     ];
 
     /**
-     * Return details associated with this model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * A link has one link detail.
+     * @return HasOne
      */
-    public function details()
+    public function details(): HasOne
     {
-        return $this->hasOne('App\Entities\LinkDetails');
+        return $this->hasOne(
+            LinkDetails::class
+        );
     }
 
     /**
-     * Return full qualified domain name data
-     * associated with this model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * A link has one fully qualified domain name.
+     * @return HasOne
      */
-    public function fqdn()
+    public function fqdn(): HasOne
     {
-        return $this->hasOne('App\Entities\LinkFqdn');
+        return $this->hasOne(
+            LinkFqdn::class
+        );
     }
 
     /**
-     * Return label data associated with this model.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * A link can belong to many labels.
+     * @return BelongsToMany
      */
-    public function label()
+    public function labels(): BelongsToMany
     {
-        return $this->hasOne('App\Entities\LinkLabel');
+        return $this->belongsToMany(
+            Label::class,
+            'link_label'
+        );
     }
 }

@@ -3,15 +3,11 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LinkFqdn extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'emtii_link_fqdn';
+    protected $table = 'link_fqdn';
 
     /**
      * The attributes that are allowed for mass assignment.
@@ -28,12 +24,12 @@ class LinkFqdn extends Model
     public $timestamps = false;
 
     /**
-     * Associate reverse relationship with model.
+     * A fully qualified domainname belongs to one link.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function link()
+    public function link(): BelongsTo
     {
-        return $this->belongsTo('App\Entities\Link');
+        return $this->belongsTo(Link::class);
     }
 }

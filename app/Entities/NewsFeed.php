@@ -11,7 +11,7 @@ class NewsFeed extends Model
      *
      * @var string
      */
-    protected $table = 'emtii_newsfeeds';
+    protected $table = 'newsfeeds';
 
     /**
      * Indicates if the model is timestamped.

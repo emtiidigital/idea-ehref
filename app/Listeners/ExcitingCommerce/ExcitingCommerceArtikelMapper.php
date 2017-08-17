@@ -20,7 +20,7 @@ class ExcitingCommerceArtikelMapper
      * We need this prefix to make sure
      * this feed has its own number
      */
-    const PREFIX_EXTERNAL_ID = 'kassenzone_artikel-';
+    const PREFIX_EXTERNAL_ID = 'excitingcommerce_artikel-';
 
     /** @var SimpleXMLElement */
     private $item;

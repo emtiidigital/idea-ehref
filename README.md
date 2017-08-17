@@ -13,4 +13,9 @@ ecommerce hyper reference
 - npm run env?
 
 # todo
-- implement label handling in LinkRepostiroy, createIfNotExists for every feed
+- implement label handling in LinkRepostiroy, createIfNotExists for every feed, we could use 				<category><![CDATA[Zalando]]></category>
+ CATEGORY of RSS Feeds for this (will be a lot, i think, need to aggregate those as well somehow)
+- implement label colors
+- way more logging of logic, implement logging level
+- implement sort
+- implement filter

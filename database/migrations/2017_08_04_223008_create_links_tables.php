@@ -13,19 +13,19 @@ class CreateLinksTables extends Migration
      */
     public function up()
     {
-        Schema::create('emtii_links', function (Blueprint $table) {
+        Schema::create('links', function (Blueprint $table) {
             $table->increments('id'); // 1
             $table->timestamps(); // created_at, updated_at
         });
 
-        Schema::create('emtii_link_details', function (Blueprint $table) {
+        Schema::create('link_details', function (Blueprint $table) {
             $table->increments('id'); // 1
             $table->integer('link_id'); // 1
             $table->string('name'); // Foobar
             $table->string('locale'); // de_DE
         });
 
-        Schema::create('emtii_link_fqdn', function (Blueprint $table) {
+        Schema::create('link_fqdn', function (Blueprint $table) {
             $table->increments('id'); // 1
             $table->integer('link_id'); // 1
             $table->string('scheme'); // https
@@ -34,13 +34,13 @@ class CreateLinksTables extends Migration
             $table->string('full_qualified_link'); // https://www.foobar.de/emtii
         });
 
-        Schema::create('emtii_link_labels', function (Blueprint $table) {
+        Schema::create('link_labels', function (Blueprint $table) {
             $table->increments('id'); // id
             $table->integer('link_id'); // id
             $table->integer('label_id'); //
         });
 
-        Schema::create('emtii_labels', function (Blueprint $table) {
+        Schema::create('labels', function (Blueprint $table) {
             $table->increments('id'); // 1
             $table->string('name'); // IT
         });
@@ -53,10 +53,10 @@ class CreateLinksTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emtii_links');
-        Schema::dropIfExists('emtii_link_details');
-        Schema::dropIfExists('emtii_link_fqdn');
-        Schema::dropIfExists('emtii_link_label');
-        Schema::dropIfExists('emtii_labels');
+        Schema::dropIfExists('links');
+        Schema::dropIfExists('link_details');
+        Schema::dropIfExists('link_fqdn');
+        Schema::dropIfExists('link_label');
+        Schema::dropIfExists('labels');
     }
 }

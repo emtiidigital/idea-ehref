@@ -27,7 +27,9 @@
     --}}
 
     {{-- badge label --}}
-    {{--
-    <span class="new badge red darken-1" data-badge-caption="{{ $link->label->label_id }}"></span>
-    --}}
+    @foreach($link->labels as $label)
+        <span class="new badge black" data-badge-caption="">
+            {{ $label->name }}
+        </span>
+    @endforeach
 </a>

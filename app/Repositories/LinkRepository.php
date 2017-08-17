@@ -18,7 +18,9 @@ class LinkRepository
 {
     const LINK_JOIN_TABLES = [
             'details',
-            'fqdn'
+            'fqdn',
+            'labels'
+
         ];
 
     const LINKS_PER_PAGE = 30;

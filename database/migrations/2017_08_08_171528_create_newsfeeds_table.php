@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateNewsfeedsTable extends Migration
 {
-    const TABLE_NAME = 'emtii_newsfeeds';
+    const TABLE_NAME = 'newsfeeds';
 
     /**
      * Run the migrations.

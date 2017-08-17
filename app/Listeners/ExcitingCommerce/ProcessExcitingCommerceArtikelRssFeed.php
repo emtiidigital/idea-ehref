@@ -19,7 +19,7 @@ class ProcessExcitingCommerceArtikelRssFeed
      * We need this prefix to make sure
      * this feed has its own number
      */
-    const PREFIX_EXTERNAL_ID = 'kassenzone_artikel-';
+    const PREFIX_EXTERNAL_ID = 'excitingcommerce_artikel-';
 
     /**
      * Directory relative to storage root of this app,
@@ -32,7 +32,7 @@ class ProcessExcitingCommerceArtikelRssFeed
      * is assigned to. We read this name out of the database
      * and start our processing if the assignment is correct.
      */
-    const NAME_OF_FEED = 'kassenzone_artikel';
+    const NAME_OF_FEED = 'excitingcommerce_artikel';
 
     /** @var LinkRepository */
     private $linkRepository;
