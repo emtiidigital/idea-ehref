@@ -110,7 +110,7 @@ class ProcessKassenzoneArtikelRssFeed
      *
      * @return ExcitingCommerceArtikelMapper
      */
-    private function getKassenzoneArtikelMapper($item ): ExcitingCommerceArtikelMapper
+    private function getKassenzoneArtikelMapper($item): ExcitingCommerceArtikelMapper
     {
         return new ExcitingCommerceArtikelMapper($item);
     }
@@ -121,7 +121,7 @@ class ProcessKassenzoneArtikelRssFeed
      *
      * @param ExcitingCommerceArtikelMapper $mapper
      */
-    private function saveNewLinks( ExcitingCommerceArtikelMapper $mapper): void
+    private function saveNewLinks(ExcitingCommerceArtikelMapper $mapper): void
     {
         $this->linkRepository->saveNewLink(
             $mapper->getMappedLink(),
