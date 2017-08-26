@@ -17,12 +17,19 @@ use Illuminate\Support\Facades\DB;
  */
 class LinkRepository
 {
+    /**
+     * We want to join these models into our
+     * general link query.
+     */
     const LINK_JOIN_TABLES = [
             'details',
             'fqdn',
             'labels'
         ];
 
+    /**
+     * We want to have those links per page.
+     */
     const LINKS_PER_PAGE = 30;
 
     /**
@@ -95,5 +102,7 @@ class LinkRepository
             Link::find($link->id)->fqdn()->save($linkFqdn);
             Link::find($link->id)->labels()->save($labels);
         });
+
+        return true;
     }
 }
