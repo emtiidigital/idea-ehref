@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterLinksAddPublishedTimestamp extends Migration
+class CreateLabelLinkPivot extends Migration
 {
-    const TABLE_NAME = 'links';
+    const TABLE_NAME = 'label_link';
 
     /**
      * Run the migrations.
@@ -15,8 +15,10 @@ class AlterLinksAddPublishedTimestamp extends Migration
      */
     public function up()
     {
-        Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->timestamp('published_at')->useCurrent();
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
+            $table->integer('label_id');
+            $table->integer('link_id');
+            $table->primary(['label_id', 'link_id']);
         });
     }
 
@@ -27,6 +29,6 @@ class AlterLinksAddPublishedTimestamp extends Migration
      */
     public function down()
     {
-      
+        Schema::drop(self::TABLE_NAME);
     }
 }

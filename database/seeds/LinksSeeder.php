@@ -19,7 +19,6 @@ class LinksSeeder extends Seeder
                 function ($link) {
                     factory(App\Entities\LinkDetails::class)->create([ 'link_id' => $link->id]);
                     factory(App\Entities\LinkFqdn::class)->create([ 'link_id' => $link->id]);
-                    factory(App\Entities\LinkLabel::class)->create([ 'link_id' => $link->id]);
                 }
             );
     }

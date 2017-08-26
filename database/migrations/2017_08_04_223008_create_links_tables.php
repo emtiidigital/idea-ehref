@@ -15,6 +15,7 @@ class CreateLinksTables extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->increments('id'); // 1
+            $table->timestamp('published_at')->useCurrent();
             $table->timestamps(); // created_at, updated_at
         });
 
@@ -34,12 +35,6 @@ class CreateLinksTables extends Migration
             $table->string('full_qualified_link'); // https://www.foobar.de/emtii
         });
 
-        Schema::create('link_labels', function (Blueprint $table) {
-            $table->increments('id'); // id
-            $table->integer('link_id'); // id
-            $table->integer('label_id'); //
-        });
-
         Schema::create('labels', function (Blueprint $table) {
             $table->increments('id'); // 1
             $table->string('name'); // IT
@@ -56,7 +51,6 @@ class CreateLinksTables extends Migration
         Schema::dropIfExists('links');
         Schema::dropIfExists('link_details');
         Schema::dropIfExists('link_fqdn');
-        Schema::dropIfExists('link_label');
         Schema::dropIfExists('labels');
     }
 }

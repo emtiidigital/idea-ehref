@@ -8,7 +8,6 @@ class DatabaseSeeder extends Seeder
         'links',
         'link_details',
         'link_fqdn',
-        'link_label',
         'labels',
         'newsfeeds'
     ];

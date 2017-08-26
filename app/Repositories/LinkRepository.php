@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Entities\Label;
 use App\Entities\Link;
 use App\Entities\LinkDetails;
 use App\Entities\LinkFqdn;
@@ -20,7 +21,6 @@ class LinkRepository
             'details',
             'fqdn',
             'labels'
-
         ];
 
     const LINKS_PER_PAGE = 30;
@@ -71,26 +71,29 @@ class LinkRepository
      * use of an transaction as we have to respect more than
      * one relation between Models.
      *
-     * @TODO: Implement Link Label.
-     *
      * @param Link $link
      * @param LinkDetails $linkDetails
      * @param LinkFqdn $linkFqdn
+     * @param Label $labels
+     *
      * @return mixed
      */
     public function saveNewLink(
         Link $link,
         LinkDetails $linkDetails,
-        LinkFqdn $linkFqdn
+        LinkFqdn $linkFqdn,
+        Label $labels
     ) {
         DB::transaction(function () use (
             $link,
             $linkDetails,
-            $linkFqdn
+            $linkFqdn,
+            $labels
         ) {
             $link->save();
             Link::find($link->id)->details()->save($linkDetails);
             Link::find($link->id)->fqdn()->save($linkFqdn);
+            Link::find($link->id)->labels()->save($labels);
         });
     }
 }

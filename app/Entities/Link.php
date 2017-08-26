@@ -10,14 +10,12 @@ class Link extends Model
 {
     /**
      * The attributes that are allowed for mass assignment.
-     *
      * @var array
      */
     protected $fillable = ['published_at'];
 
     /**
      * The attributes that should be mutated to dates.
-     *
      * @var array
      */
     protected $dates = [
@@ -55,8 +53,7 @@ class Link extends Model
     public function labels(): BelongsToMany
     {
         return $this->belongsToMany(
-            Label::class,
-            'link_label'
+            Label::class
         );
     }
 }

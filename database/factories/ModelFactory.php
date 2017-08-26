@@ -12,6 +12,17 @@
 */
 
 /**
+ * Labels Model
+ *
+ * @var \Illuminate\Database\Eloquent\Factory $factory
+ */
+$factory->define(\App\Entities\Label::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->colorName
+    ];
+});
+
+/**
  * Links Factory
  *
  * @var \Illuminate\Database\Eloquent\Factory $factory
@@ -48,30 +59,6 @@ $factory->define(\App\Entities\LinkFqdn::class, function (Faker\Generator $faker
         'full_qualified_link' => $faker->url
     ];
 });
-
-/**
- * Links Labels Model
- *
- * @var \Illuminate\Database\Eloquent\Factory $factory
- */
-$factory->define(\App\Entities\LinkLabel::class, function (Faker\Generator $faker) {
-    return [
-        //'link_id' => $faker->numberBetween(1, 1000),
-        'label_id' => $faker->numberBetween(1, 10)
-    ];
-});
-
-/**
- * Labels Model
- *
- * @var \Illuminate\Database\Eloquent\Factory $factory
- */
-$factory->define(\App\Entities\Label::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->colorName
-    ];
-});
-
 
 /**
  * NewsFeed Model
